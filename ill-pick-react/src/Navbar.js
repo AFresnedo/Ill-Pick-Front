@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
-import logo from '../logo.svg';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 import './App.css';
+import logo from './burger.png';
 
 class Nav extends Component {
   handleLogout = (e) => {
@@ -18,25 +17,26 @@ class Nav extends Component {
       links = (
           <span>
             <a onClick={this.handleLogout}>Logout</a>
-            <Link to="/profile" className="nav-links">Profile</Link>
+            <Link to="/profile">Profile</Link>{' '}
           </span>
         );
     }
     else {
       links = (
           <span>
-            <Link to="/login" className="nav-links">Log In</Link>
-            <Link to="/signup" className="nav-links">Sign Up</Link>
+            <Link to="/login">Log In</Link>{' '}
+            <Link to="/signup">Sign Up</Link>{' '}
           </span>
         );
     }
     return(
         <div>
-          <nav className="navbar">
-          	<span>
-            <Link to="/">Home</Link>
-            </span>
+          <nav className="orange darken-4">
+          <img className="brand-logo left" alt='burger' src={logo}/>
+            <span className="right navpad">
+            <Link to="/">Home</Link>{' '}
             {links}
+            </span>
           </nav>
         </div>
       );

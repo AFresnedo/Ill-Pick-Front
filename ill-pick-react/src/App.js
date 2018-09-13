@@ -5,7 +5,7 @@ import SERVER_URL from './constants/server';
 import './App.css';
 import Home from './Home';
 import Login from './Auth/Login';
-import Nav from './Navbar';
+import Navbar from './Navbar';
 import Profile from './Profile';
 import Signup from './Auth/Signup';
 
@@ -56,10 +56,10 @@ class App extends Component {
 
   render() {
     return (
-      <div className="App">
+      <div>
         <Router>
-          <div className="container">
-            <Nav user={this.state.user} updateUser={this.getUser} />
+          <div>
+            <Navbar user={this.state.user} updateUser={this.getUser} />
             <Route exact path="/" component={Home} />
             <Route path="/login" component={
               () => (<Login user={this.state.user} updateUser={this.getUser} />)
