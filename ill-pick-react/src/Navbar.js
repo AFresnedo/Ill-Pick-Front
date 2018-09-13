@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 import './App.css';
 import Home from './Home';
-import Login from './Login';
-import Signup from './Signup';
+import Login from './Auth/Login';
+import Signup from './Auth/Signup';
 
 class Navbar extends Component {
   render() {
