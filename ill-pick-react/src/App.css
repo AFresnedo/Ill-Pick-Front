@@ -2,24 +2,20 @@
   text-align: center;
 }
 
-.navbar {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    background-color: #333;
+.navpad {
+    padding-right: 10px;
 }
 
-.navlink {
-    float: left;
-    display: block;
-    color: white;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
+body {
+    background-image: url('./background.jpg');
+    background-size: cover;
+    font-family: 'Anton';
 }
 
-/* Change the link color to #111 (black) on hover */
-.navlink:hover {
-    background-color: #111;
+.editform {
+    background-color: #e65100;
+    padding: 15px;
+    border-radius: 5px;
+    margin-top: 50px;
+    box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.25);
 }
