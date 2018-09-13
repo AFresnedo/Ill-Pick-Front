@@ -1,31 +1,44 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
-import './App.css';
-import Home from './Home';
-import Login from './Auth/Login';
-import Signup from './Auth/Signup';
+import { Link } from 'react-router-dom';
+import logo from '../logo.svg';
 
-class Navbar extends Component {
+class Nav extends Component {
+  handleLogout = (e) => {
+    console.log('logging out...');
+    e.preventDefault();
+    localStorage.removeItem('mernToken');
+    this.props.updateUser();
+  }
+
   render() {
-    return (
-      <div className="navbar">
-      	<Router>
-      	<div>
-      		<nav>
-	      		<img src="http://www.fillmurray.com/140/100" className="logo-image" />
-	      		<Link to="/" className="nav-link">Home</Link>
-	      		<Link to="/login" className="nav-link">Login</Link>
-	      		<Link to="/signup" className="nav-link">Sign up</Link>
-	      	</nav>
-	      	<Route exact path="/" component={Home} />
-	      	<Route path="/login" component={Login} />
-	      	<Route path="/signup" component={Signup} />
-	    </div>
-      	</Router>
-        
-      </div>
-    );
+    let links = '';
+    if(this.props.user){
+      links = (
+          <span>
+            <a onClick={this.handleLogout}>Logout</a>
+            <Link to="/profile" className="nav-links">Profile</Link>
+          </span>
+        );
+    }
+    else {
+      links = (
+          <span>
+            <Link to="/login" className="nav-links">Log In</Link>
+            <Link to="/signup" className="nav-links">Sign Up</Link>
+          </span>
+        );
+    }
+    return(
+        <div>
+          <nav className="navbar">
+          	<span>
+            <Link to="/">Home</Link>
+            </span>
+            {links}
+          </nav>
+        </div>
+      );
   }
 }
 
-export default Navbar;
+export default Nav;
