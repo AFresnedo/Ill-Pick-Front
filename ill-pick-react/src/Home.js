@@ -7,12 +7,8 @@ class Home extends Component {
   render() {
     return (
       <div className="">
-      	<button className="random-search" type="button">Try It!</button>
-        <select className="meal-select-box">
-          <option>Breakfast</option>
-          <option>Lunch</option>
-          <option>Dinner</option>
-        </select>
+        
+        <button className="random-search" type="button">Try It!</button>
         
       </div>
     );
