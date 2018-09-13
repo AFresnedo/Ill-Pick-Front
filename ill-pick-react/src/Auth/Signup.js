@@ -37,25 +37,25 @@ class Signup extends Component {
   }
 
   render() {
-    if(this.props.user){
-      return (<Redirect to="/profile" />);
-    }
-    return(
-        <div>
-          <h2>Signup as a new user</h2>
-          <form onSubmit={this.handleSubmit}>
-            <div>
-              <label>Username:</label>
-              <input name="Email" placeholder="ex. Awesomesauce" value={this.state.email} onChange={this.handleEmailChange} />
-            </div>
-            <div>
-              <label>Passord:</label>
-              <input name="Password" type="password" value={this.state.password} onChange={this.handlePasswordChange} />
-            </div>
-            <input type="submit" value="Sign Me Up!" className="button" />
-          </form>
-        </div>
-      );
+    //if(this.props.user){
+      return (<Redirect to="/favorites" />);
+    // }
+    // return(
+    //     <div>
+    //       <h2>Signup as a new user</h2>
+    //       <form onSubmit={this.handleSubmit}>
+    //         <div>
+    //           <label>Username:</label>
+    //           <input name="Email" placeholder="ex. Awesomesauce" value={this.state.email} onChange={this.handleEmailChange} />
+    //         </div>
+    //         <div>
+    //           <label>Passord:</label>
+    //           <input name="Password" type="password" value={this.state.password} onChange={this.handlePasswordChange} />
+    //         </div>
+    //         <input type="submit" value="Sign Me Up!" className="button" />
+    //       </form>
+    //     </div>
+    //   );
   }
 }
 
