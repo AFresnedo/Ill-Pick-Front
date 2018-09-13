@@ -8,6 +8,7 @@ import Login from './Auth/Login';
 import Navbar from './Navbar';
 import Profile from './Profile';
 import Signup from './Auth/Signup';
+import Favorites from './Favorites';
 
 class App extends Component {
   constructor(props){
@@ -59,16 +60,20 @@ class App extends Component {
       <div>
         <Router>
           <div>
+
             <Navbar user={this.state.user} updateUser={this.getUser} />
             <Route exact path="/" component={Home} />
             <Route path="/login" component={
               () => (<Login user={this.state.user} updateUser={this.getUser} />)
             } />
-            <Route path="/signup" component={
-              () => (<Signup user={this.state.user} updateUser={this.getUser} />)
-            } />
+            <Route path="/signup" component={Signup}
+            //component={() => (<Signup user={this.state.user} updateUser={this.getUser} />)} 
+            />
             <Route path="/profile" component={
               () => (<Profile user={this.state.user} />)
+            } />
+            <Route path="/favorites" component={
+              () => (<Favorites user={this.state.user} />)
             } />
           </div>
         </Router>

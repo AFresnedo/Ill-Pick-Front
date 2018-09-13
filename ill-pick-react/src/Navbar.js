@@ -1,9 +1,12 @@
 import React, { Component } from 'react';
+
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
+
 import './App.css';
 import logo from './burger.png';
 
-class Nav extends Component {
+
+class Navbar extends Component {
   handleLogout = (e) => {
     console.log('logging out...');
     e.preventDefault();
@@ -43,4 +46,4 @@ class Nav extends Component {
   }
 }
 
-export default Nav;
+export default Navbar;
