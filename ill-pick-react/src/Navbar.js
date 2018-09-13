@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import './App.css';
 
-class Nav extends Component {
+
+class Navbar extends Component {
   handleLogout = (e) => {
     console.log('logging out...');
     e.preventDefault();
@@ -40,4 +42,4 @@ class Nav extends Component {
   }
 }
 
-export default Nav;
+export default Navbar;
