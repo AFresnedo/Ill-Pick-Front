@@ -1,37 +1,46 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
+import logo from '../logo.svg';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 import './App.css';
-import Home from './Home';
-<<<<<<< HEAD
-import Login from './Login';
-import Signup from './Signup';
-import logo from './burger.png';
-=======
-import Login from './Auth/Login';
-import Signup from './Auth/Signup';
->>>>>>> 20e4964af0a29c586d5e08fa7944cd42a29d3314
 
-class Navbar extends Component {
+class Nav extends Component {
+  handleLogout = (e) => {
+    console.log('logging out...');
+    e.preventDefault();
+    localStorage.removeItem('mernToken');
+    this.props.updateUser();
+  }
+
   render() {
-    return (
-      <div className="navbar">
-
+    let links = '';
+    if(this.props.user){
+      links = (
+          <span>
+            <a onClick={this.handleLogout}>Logout</a>
+            <Link to="/profile" className="nav-links">Profile</Link>
+          </span>
+        );
+    }
+    else {
+      links = (
+          <span>
+            <Link to="/login" className="nav-links">Log In</Link>
+            <Link to="/signup" className="nav-links">Sign Up</Link>
+          </span>
+        );
+    }
+    return(
         <div>
-          <div>
-         		<nav className="navbar">
-          		<img src={logo} className="navlink logo-image" />
-          		<Link to="/" className="navlink">Home</Link>
-          		<Link to="/login" className="navlink">Login</Link>
-          		<Link to="/signup" className="navlink">Sign up</Link>
-          	</nav>            
-          </div>
-
+          <nav className="navbar">
+          	<span>
+            <Link to="/">Home</Link>
+            </span>
+            {links}
+          </nav>
         </div>
-
-        
-      </div>
-    );
+      );
   }
 }
 
-export default Navbar;
+export default Nav;
