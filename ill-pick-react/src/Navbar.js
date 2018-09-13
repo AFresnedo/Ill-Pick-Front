@@ -4,24 +4,25 @@ import './App.css';
 import Home from './Home';
 import Login from './Login';
 import Signup from './Signup';
+import logo from './burger.png';
 
 class Navbar extends Component {
   render() {
     return (
       <div className="navbar">
-      	<Router>
-      	<div>
-      		<nav>
-	      		<img src="http://www.fillmurray.com/140/100" className="logo-image" />
-	      		<Link to="/" className="nav-link">Home</Link>
-	      		<Link to="/login" className="nav-link">Login</Link>
-	      		<Link to="/signup" className="nav-link">Sign up</Link>
-	      	</nav>
-	      	<Route exact path="/" component={Home} />
-	      	<Route path="/login" component={Login} />
-	      	<Route path="/signup" component={Signup} />
-	    </div>
-      	</Router>
+
+        <div>
+          <div>
+         		<nav className="navbar">
+          		<img src={logo} className="navlink logo-image" />
+          		<Link to="/" className="navlink">Home</Link>
+          		<Link to="/login" className="navlink">Login</Link>
+          		<Link to="/signup" className="navlink">Sign up</Link>
+          	</nav>            
+          </div>
+
+        </div>
+
         
       </div>
     );
