@@ -28,9 +28,8 @@ class Favorites extends Component {
   }
 
   handleAddFave = (e) => {
-    e.preventDefault();
     faveArr.push(e.target.value);
-    //console.log(faveArr);
+    console.log(faveArr);
   } 
 
   handleUserFave = (e) =>{
