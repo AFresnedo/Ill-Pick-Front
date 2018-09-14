@@ -24,7 +24,7 @@ class Favorites extends Component {
         <h1>Tell us about the foods you like!</h1>
         {meals.map( food => <Allfoods meals={food} />)}
         
-
+        <button type="submit">Set!</button>
       </div>
     );
   }

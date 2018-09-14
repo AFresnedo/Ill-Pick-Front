@@ -37,29 +37,31 @@ class Signup extends Component {
   }
 
   render() {
-    if(this.props.user){
-      return (<Redirect to="/profile" />);
-    }
-    return(
-        <div className="container">
-          <h2 className="center-align">Signup as a new user</h2>
-          <form className="editform" onSubmit={this.handleSubmit}>
-            <div className="row">
-              <div className="input-field col s12">
-                <label>Username:</label>
-                <input name="Email" placeholder="ex. Awesomesauce" value={this.state.email} onChange={this.handleEmailChange} />
-              </div>
-              <div className="input-field col s12">
-                <label>Passord:</label>
-                <input name="Password" type="password" value={this.state.password} onChange={this.handlePasswordChange} />
-              </div>
-              <button class="btn waves-effect waves-light amber right" type="submit" name="action">Sign me up!
-                <i class="material-icons right">send</i>
-              </button>              
-            </div>
-          </form>
-        </div>
-      );
+    //if(this.props.user){
+      return (<Redirect to="/favorites" />);
+  //   }
+  //   return(
+  //       <div className="container">
+  //         <h2 className="center-align">Signup as a new user</h2>
+  //         <form className="editform" onSubmit={this.handleSubmit}>
+  //           <div className="row">
+  //             <div className="input-field col s12">
+  //               <label>Username:</label>
+  //               <input name="Email" value={this.state.email} onChange={this.handleEmailChange} />
+  //             </div>
+  //             </div>
+  //             <div className="row">
+  //             <div className="input-field col s12">
+  //               <label>Password:</label>
+  //               <input name="Password" type="password" value={this.state.password} onChange={this.handlePasswordChange} />
+  //             </div>
+  //             <button class="btn waves-effect waves-light amber right" type="submit" name="action">Sign me up!
+  //               <i class="material-icons right">send</i>
+  //             </button>              
+  //           </div>
+  //         </form>
+  //       </div>
+  //     );
   }
 }
 

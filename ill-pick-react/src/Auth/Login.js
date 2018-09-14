@@ -42,7 +42,7 @@ class Login extends Component {
           <div className="row">
             <div className="input-field col s12">
               <label for="Email">Email:</label>
-              <input name="Email" placeholder="What is your email?" value={this.state.email} onChange={this.handleEmailChange} />
+              <input name="Email" value={this.state.email} onChange={this.handleEmailChange} />
             </div>
             <div className="input-field col s12">
               <label for="Password">Password:</label>
