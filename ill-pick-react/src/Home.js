@@ -38,10 +38,16 @@ class Home extends Component {
   
   render() {
     return (
-      <div className="">
-        <h1>{this.state.name}</h1>
-        <button className="random-search" onClick={this.handleRandom} >Try It!</button>
-        
+      <div className="container">
+        <div className="home row">
+        	<div className="col s12 center">
+        		<h3>Press the "Try it! button to get a random dish!</h3>
+        		<h1>{this.state.name}</h1>
+        		<br />
+
+		        <button class="btn waves-effect waves-light amber tryit" type="submit" onClick={this.handleRandom}>Try it!</button>        		
+        	</div>
+        </div>        
       </div>
     );
   }
