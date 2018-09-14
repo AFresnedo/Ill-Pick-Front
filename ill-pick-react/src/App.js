@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route } from 'react-router-dom';
 import axios from 'axios';
 import SERVER_URL from './constants/server';
 import './App.css';
+import './animate.css';
 import Home from './Home';
 import Login from './Auth/Login';
 import Navbar from './Navbar';
@@ -67,7 +68,7 @@ class App extends Component {
               () => (<Login user={this.state.user} updateUser={this.getUser} />)
             } />
             <Route path="/signup" component={Signup}
-            //component={() => (<Signup user={this.state.user} updateUser={this.getUser} />)} 
+            component={() => (<Signup user={this.state.user} updateUser={this.getUser} />)} 
             />
             <Route path="/profile" component={
               () => (<Profile user={this.state.user} />)

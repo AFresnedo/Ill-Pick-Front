@@ -7,12 +7,12 @@ class Login extends Component {
   constructor(props){
     super(props);
     this.state = {
-      email: '',
+      name: '',
       password: ''
     };
   }
 
-  handleEmailChange = (e) => { this.setState({ email: e.target.value }); }
+  handleNameChange = (e) => { this.setState({ name: e.target.value }); }
 
   handlePasswordChange = (e) => { this.setState({ password: e.target.value }); }
 
@@ -41,8 +41,8 @@ class Login extends Component {
         <form className="editform" onSubmit={this.handleSubmit}>
           <div className="row">
             <div className="input-field col s12">
-              <label for="Email">Email:</label>
-              <input name="Email" value={this.state.email} onChange={this.handleEmailChange} />
+              <label for="Username">Username:</label>
+              <input name="Username" type="text" value={this.state.name} onChange={this.handleNameChange} />
             </div>
             <div className="input-field col s12">
               <label for="Password">Password:</label>
