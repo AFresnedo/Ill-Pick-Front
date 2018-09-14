@@ -18,24 +18,25 @@ class Navbar extends Component {
       links = (
           <span>
             <a onClick={this.handleLogout}>Logout</a>
-            <Link to="/profile">Profile</Link>{' '}
+            <Link className="anchorpad" to="/profile">Profile</Link>{' '}
           </span>
         );
     }
     else {
       links = (
           <span>
-            <Link to="/login">Log In</Link>{' '}
-            <Link to="/signup">Sign Up</Link>{' '}
+            <Link className="anchorpad" to="/login">Log In</Link>{' '}
+            <Link className="anchorpad" to="/signup">Sign Up</Link>{' '}
           </span>
         );
     }
     return(
         <div>
           <nav className="orange darken-4">
-          <img className="brand-logo left" alt='burger' src={logo}/>
+          <a href="#" class="brand-logo center"><i class="material-icons left">local_dining</i> I'll Pick<i class="material-icons right">local_dining</i></a>
+          <img className="brand-logo left logo" alt='burger' src={logo}/>
             <span className="right navpad">
-            <Link to="/">Home</Link>{' '}
+            <Link className="anchorpad" to="/">Home</Link>{' '}
             {links}
             </span>
           </nav>
