@@ -30,9 +30,13 @@ class Home extends Component {
     axios.get(SERVER_URL + '/meals')
       .then( result => {
         console.log('SUCCESS', result)
+        this.setState({
+          name: result.data.name
+        })
       }).catch( err => {
         console.log('THERE WAS AN ERROR!')
       })
+    console.log('The name is: ', this.state.name)
   }
 
   
