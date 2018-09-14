@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route } from 'react-router-dom';
 import axios from 'axios';
 import SERVER_URL from './constants/server';
 import './App.css';
+import './animate.css';
 import Home from './Home';
 import Login from './Auth/Login';
 import Navbar from './Navbar';
