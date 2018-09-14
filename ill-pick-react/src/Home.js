@@ -20,19 +20,23 @@ class Home extends Component {
   constructor(props){
     super(props);
     this.state = {
-      name: 'spaghetti'
+      name: ' '
     }
   }
 
   handleRandom = (e) => {
     e.preventDefault();
     console.log('step 1', this.state);
-    axios.get(SERVER_URL + '/meals')
+    axios.get(SERVER_URL + '/meals/getRandom')
       .then( result => {
         console.log('SUCCESS', result)
+        this.setState({
+          name: result.data.name
+        })
       }).catch( err => {
         console.log('THERE WAS AN ERROR!')
       })
+    console.log('The name is: ', this.state.name)
   }
 
   
