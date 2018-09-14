@@ -13,7 +13,7 @@ class Profile extends Component {
   handleFavorite = (e) => {
     e.preventDefault();
     console.log('step 1', this.state);
-    axios.get(SERVER_URL + '/users/RandFave')
+    axios.post(SERVER_URL + '/users/RandFave', this.props.user)
       .then( result => {
         console.log('SUCCESS', result)
         this.setState({

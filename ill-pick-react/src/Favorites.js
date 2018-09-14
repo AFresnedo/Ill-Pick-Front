@@ -17,24 +17,24 @@ const meals = [
   'Salad'
 ]
 
-let faveArr = ['Spaghetti', 'Pizza', 'Tacos'];
-
 class Favorites extends Component {
   constructor(props){
     super(props);
     this.state = {
       user: this.props.user,
-      faves: ['Pizza'],
+      faves: [],
     };
   }
 
   handleAddFave = (e) => {
-    faveArr.push(e.target.value);
-    console.log(faveArr);
+    const newFaves = this.state.faves;
+    newFaves.push(e.target.value);
+    console.log('old faves:', this.state.faves);
+    console.log('new faves:', newFaves);
     this.setState({
-      faves: faveArr
+      faves: newFaves
     })
-  } 
+  }
 
   handleUserFave = (e) =>{
     axios.post(SERVER_URL + '/users/setFaves', this.state)
@@ -53,12 +53,12 @@ class Favorites extends Component {
         <div className="favorites center">
           <h1>Tell us about the foods you like!</h1>
           <div className="favorites-list">
-            { meals.map( food => <Allfoods meals={food}  addItem={this.handleAddFave} />)}            
+            { meals.map( food => <Allfoods meals={food}  addItem={this.handleAddFave} />)}
           </div>
-          
+
           <button class="btn waves-effect waves-light amber submit" type="submit" name="action" onClick={this.handleUserFave}>Submit
             <i class="material-icons right">send</i>
-          </button>       
+          </button>
         </div>
       </div>
     );
