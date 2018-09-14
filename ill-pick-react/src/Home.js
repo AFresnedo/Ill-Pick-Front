@@ -4,23 +4,12 @@ import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 import axios from 'axios';
 import SERVER_URL from './constants/server';
 
-const meals = [
-  'spaghetti',
-  'fish tacos',
-  'burritos',
-  'franks and beans',
-  'noodles',
-  'Dr. Pepper',
-  'hamburgers',
-  'hotdogs',
-  'salad'
-]
 
 class Home extends Component {
   constructor(props){
     super(props);
     this.state = {
-      name: 'TEST '
+      name: ' '
     }
   }
 
