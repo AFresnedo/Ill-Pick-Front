@@ -17,26 +17,31 @@ const meals = [
   'Salad'
 ]
 
-let faveArr = [];
+let faveArr = ['Spaghetti', 'Pizza', 'Tacos'];
 
 class Favorites extends Component {
   constructor(props){
     super(props);
     this.state = {
-      faves: null,
+      user: this.props.user,
+      faves: ['Pizza'],
     };
   }
 
   handleAddFave = (e) => {
     faveArr.push(e.target.value);
     console.log(faveArr);
+    this.setState({
+      faves: faveArr
+    })
   } 
 
   handleUserFave = (e) =>{
-    e.preventDefault();
-    axios.post(SERVER_URL + '/users/setFaves')
+    axios.post(SERVER_URL + '/users/setFaves', this.state)
       .then( faves =>{
-        console.log(faveArr)
+        console.log('YAY!')
+      }).catch( err => {
+        console.log('THE WAS AN ERROR')
       })
   }
 
