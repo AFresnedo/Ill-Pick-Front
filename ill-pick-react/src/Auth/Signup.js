@@ -43,7 +43,8 @@ class Signup extends Component {
           <form className="editform" onSubmit={this.handleSubmit}>
             <div className="row">
               <div className="input-field col s12">
-                <label>Username:</label>
+                <label for="Username">Username:</label>
+                <input name="Username" type="text" value={this.state.name} onChange={this.handleNameChange} />
               </div>
               </div>
               <div className="row">
